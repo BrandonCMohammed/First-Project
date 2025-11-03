@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HelloWorld
 {
@@ -21,14 +22,19 @@ namespace HelloWorld
         }
         static void Main(string[] args)
         {
-            Car myCar = new Car();
-            Console.WriteLine(myCar.color);
-            int a = 5;
-            Console.WriteLine("Hello, World! " + a);
-            string name = Console.ReadLine();
-            Console.WriteLine($"Hello {name}!");
+            Car myCar = new Car("Red", 2020);
+            Console.WriteLine(myCar.Color);
+            Console.WriteLine(myCar.Year);
 
-            foreachTesting();
+            // myCar.Color = "Blue";
+            // Console.WriteLine(myCar.Color);
+
+            // int a = 5;
+            // Console.WriteLine("Hello, World! " + a);
+            // string name = Console.ReadLine();
+            // Console.WriteLine($"Hello {name}!");
+
+            // foreachTesting();
 
             // if (a > 3)
             // {
@@ -46,7 +52,25 @@ namespace HelloWorld
 
     class Car
     {
-        public string color = "red";
+        public Car(string color, int year)
+        {
+            Color = color;
+            Year = year;
+        }
+
+        public string Color
+        {
+            get;
+            set;
+        }
+
+        public int Year
+        {
+            get;
+            set;
+        }
+
+
     }
 }
 
